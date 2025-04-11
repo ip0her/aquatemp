@@ -1,7 +1,7 @@
 from datetime import timedelta
 from enum import StrEnum
 
-from homeassistant.components.climate.const import FAN_AUTO, FAN_LOW, HVACMode
+from homeassistant.components.climate.const import FAN_AUTO, FAN_LOW, FAN_HIGH, HVACMode
 
 DOMAIN = "aqua_temp"
 DEFAULT_NAME = "Aqua Temp"
@@ -43,10 +43,14 @@ PRODUCT_IDS = [
     "1664085465655808000",  # Aqua Temp
 ]
 
+FAN_OFF = "off" 
+
 MANUAL_MUTE_AUTO = "0"
 MANUAL_MUTE_LOW = "1"
+MANUAL_MUTE_HIGH = "2"
+MANUAL_MUTE_OFF = "0"
 
-FAN_MODE_MAPPING = {FAN_AUTO: MANUAL_MUTE_AUTO, FAN_LOW: MANUAL_MUTE_LOW}
+FAN_MODE_MAPPING = {FAN_AUTO: MANUAL_MUTE_AUTO, FAN_LOW: MANUAL_MUTE_LOW, FAN_HIGH: MANUAL_MUTE_HIGH, FAN_OFF: MANUAL_MUTE_OFF}
 
 POWER_MODE_OFF = "0"
 POWER_MODE_ON = "1"
@@ -82,6 +86,8 @@ CONFIG_HVAC_MAXIMUM = "maximum"
 CONFIG_FAN_MODES = "fan_modes"
 CONFIG_FAN_AUTO = "auto"
 CONFIG_FAN_LOW = "low"
+CONFIG_FAN_HIGH = "high"
+CONFIG_FAN_OFF = "off"
 
 DEVICE_CONTROL_VALUE = "value"
 DEVICE_CONTROL_PARAM = "param"
